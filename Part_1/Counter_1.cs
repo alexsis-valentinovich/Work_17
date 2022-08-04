@@ -10,8 +10,21 @@ using System.Threading.Tasks;
 //информацию об экземпляре класса на печать.
 namespace Part_1
 {
-    class Conters
+    public class Counters <T>
     {
-       string Name { get; set; }
+        public T NomerCouter { get; set; }
+        public int Balance { get; set; }
+        public string NameOwner { get; set; }
+
+        public Counters (T nomerCouter, int balance, string nameOwner)
+        {
+            NomerCouter = nomerCouter;
+            Balance = balance;
+            NameOwner= nameOwner;
+        }
+        public string GetInfo()
+        {
+            return $"\nНомер счета: {NomerCouter}\nБаланс: {Balance}\nВладелец счета: {NameOwner}";
+        }
     }
 }
